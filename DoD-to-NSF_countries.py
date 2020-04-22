@@ -80,11 +80,31 @@ trimmed = trimmed.drop(index=[61,62,63,64,65])
 
 # print result to make sure there are no nulls and no regions
 
-print(trimmed)
-
-# Finally, return the index to 'Region, country, or economy' and
-# 'export to .csv which is the variable 'outname'
+# Return the index to 'Region, country, or economy'
 
 trimmed.set_index('Region, country, or economy',inplace=True)
+
+# The dollars are in thousands in this Table, therefore multiply all values 
+# by 1000.
+
+trimmed = trimmed*1000
+
+# Set to data type 'int64' to match the data from other scripts.
+# Print the result, and also print the sum using the .sum() command
+
+trimmed = trimmed.astype(np.int64)
+
+print(trimmed)
+
+print("\n\n",trimmed.sum())
+
+# Note that the data tells us DoD spent $380,739,000 overseas on R&D (not counting
+# Operational Systems Development) in FY18. 
+# Note also: this sum does not include any "Undistributed" amounts that may or
+# may not have been spent overseas on R&D for which Vendor Information is 
+# undisclosed. There was over $1.6 Billion in "Undistributed" DoD R&D spending
+# in FY18, the vast majority of which was likely spent in the 50 United States.
+
+# Finally export to .csv which is the variable 'outname'
 
 trimmed.to_csv(outname)
