@@ -22,7 +22,7 @@ import io
 pd.set_option('display.max_rows',None)
 
 # Set up file names: the NSF URL with the .zip file; the .xlsx file within the .zip
-# folder; and the output file we will write the results into. 
+# folder; and the output file we will write the results into.
 # The Excel file contains FY18 international spending data by country.
 
 zipname = 'https://ncsesdata.nsf.gov/fedfunds/2018/ffs18-dt-tables.zip'
@@ -31,7 +31,7 @@ outname = 'DoD_FY18__RD_international.csv'
 
 # Use requests.get() to obtain the zip file from NSF. Use zipfile.ZipFile(io.BytesIO(r.content))
 # to read zipfile contents obtained from variable 'r'. Use .open() to open
-# desired Excel file, which is Table 86 in the zip file. 
+# desired Excel file, which is Table 86 in the zip file.
 # Read the Excel file using pd.read_excel() with arguments (xl,'Table 86',header=3)
 
 r = requests.get(zipname)
@@ -51,12 +51,12 @@ trimmed.set_index('Region, country, or economy',inplace=True)
 
 print(trimmed)
 
-# NSF data includes regions as rows, which double-counts data. 
+# NSF data includes regions as rows, which double-counts data.
 # Drop these index labels by creating a list of labels to drop
 # and applying the .drop() command on the list.
 
 droplist = ['All areas and organizations','Africa','Asia','Asian countries, other',
-            'Europe','North America','Oceania','International organizations'] 
+            'Europe','North America','Oceania','International organizations']
 
 trimmed = trimmed.drop(droplist)
 
@@ -70,8 +70,21 @@ for index, row in trimmed.iterrows():
     if row['DOD'] == 0:
         trimmed.drop(index, inplace=True)
 
-# Now drop any rows with null values using the .dropna() command
-        
-trimmed.dropna()
-        
-print(trimmed)    
+# Now drop any rows with null values using the .drop() command. Here we
+# first reset the index to locate the rows with null values, then drop the
+# rows with null values.
+
+trimmed = trimmed.reset_index()
+
+trimmed = trimmed.drop(index=[61,62,63,64,65])
+
+# print result to make sure there are no nulls and no regions
+
+print(trimmed)
+
+# Finally, return the index to 'Region, country, or economy' and
+# 'export to .csv which is the variable 'outname'
+
+trimmed.set_index('Region, country, or economy',inplace=True)
+
+trimmed.to_csv(outname)
