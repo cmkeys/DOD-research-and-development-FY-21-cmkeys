@@ -1,10 +1,22 @@
 """
 
 The goal of this script is to sort the Fisal Year 2021 Department of Defense
-Research and Budget Request by Budget Activity. We will eventually combine
-this data with the geographical distribution of DoD R&D expenditures
-from Fiscal Year 2019 obtained from the National Science Foundation, in order to
-make a guess at likely geographical distributions of FY21 funds.
+Research and Budget Request by Budget Activity. 
+There are 8 DoD Budget Activities:
+
+01 – Basic Research
+02 – Applied Research
+03 – Advanced Technology Development
+04 – Advanced Component Development and Prototypes
+05 – System Development and Demonstration
+06 – RDT&E Management Support
+07 – Operational System Development
+08 – Software and Digital Technology Pilot Programs
+
+We will eventually combine this data with the geographical distribution
+of DoD R&D expenditures from Fiscal Year 2018-2019 obtained from the 
+National Science Foundation, in order to make a guess at likely 
+geographical distributions of FY21 funds.
 
 DoD R&D budget requests are stored in Excel files.
 Pandas can read Excel files.
