@@ -10,9 +10,7 @@ sub-field of science and engineering, among other variables.
 
 The first step is to store the values we need in a .csv
 that can be combined with the DoD Budget Request data from the "DoD FY21 BA Totals.py" script.
-
 """
-
 # import pandas, requests, zipfile, io 
 
 import pandas as pd
@@ -31,7 +29,6 @@ pd.set_option('display.max_rows',None)
 zipname = 'https://ncsesdata.nsf.gov/fedfunds/2018/ffs18-dt-tables.zip'
 excelname = 'ffs18-dt-tab009.xlsx'
 outname = 'NSFtotals.csv'
-
 
 # It is best to use the requests.get() command to extract the .zip from the URL,
 # then to use BytesIO translate the contents.
