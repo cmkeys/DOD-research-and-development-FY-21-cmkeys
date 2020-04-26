@@ -24,9 +24,6 @@ for Fiscal Year 2021 DoD R&D dollars using QGIS. The results look like the graph
 
 We can zoom into particular regions to get a better view:
 
-Middle East:
-![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/Middle%20East%20Estimate_DoD%20FY21%20R%26D%20Spending.png)
-
 U.S. Tri-State area (Virginia, Maryland, Washington D.C.):
 ![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/Tri-State%20Estimate%20FY21%20DoD%20R%26D.png)
 
@@ -36,13 +33,16 @@ Western United States:
 U.S. Central, Midwest, South:
 ![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/Plains_Midwest_TX_LA.png)
 
+Central & South America:
+![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/Central%20%26%20South%20America.png)
+
 Portions of Europe:
 ![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/UK_NE_BL_LX.png)
 
 ![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/E.Europe_Greece_Turkey.png)
 
-Central & South America:
-![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/Central%20%26%20South%20America.png)
+Middle East:
+![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/Middle%20East%20Estimate_DoD%20FY21%20R%26D%20Spending.png)
 
 Asia:
 ![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/Asia_estimate.png)
