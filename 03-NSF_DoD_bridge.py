@@ -30,7 +30,7 @@ nsfcsv = 'NSFtotals.csv'
 
 outname = 'DoD_FY21_Multiplier.csv'
 
-#  Set up output file with columns titled "BA1-6" and "Total"
+#  Set up output file
 
 out_handle = open(outname,'w',newline='')
 out_writer = csv.writer(out_handle)
@@ -40,9 +40,7 @@ out_writer = csv.writer(out_handle)
 dodreader = pd.read_csv(dodcsv)
 nsfreader = pd.read_csv(nsfcsv)
 
-# print csv outputs to see which rows you will need. Goal is include
-# Budget Activities 1-6 and 8 from the DoD file, and compare the sum of these 
-# with the sum of the NSF data to get a ratio.
+# print csv outputs to see which rows you will need.
 
 print(dodreader)
 print(nsfreader)
@@ -77,9 +75,7 @@ nsfactuals = nsfactuals.astype(np.int64)
 print('\n',nsfactuals)
 print('\nSum of NSF DoD FY18:',nsfactuals.sum())
 
-# The DoD FY21 R&D Budget Request total is $68.084022 Billion.
-# The NSF FY19 R&D Budget spending total is $56.0494 Billion
-# We can now obtain a ratio of FY21 to FY19, which will function as
+# We can now obtain a ratio of FY21 to FY18, which will function as
 # a multiplier for the geographical projections that follow.
 
 # Divide the two sums to obtain the multiplier
