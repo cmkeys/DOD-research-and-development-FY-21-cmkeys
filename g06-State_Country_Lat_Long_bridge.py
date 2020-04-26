@@ -68,6 +68,3 @@ print(dodlat)
 # Finally, export the result to a .csv file that can be used in QGIS.
 
 dodlat.to_csv(outname)
-
-
-
