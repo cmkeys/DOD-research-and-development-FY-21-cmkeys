@@ -1,8 +1,8 @@
 # Using Python and QGIS to Anticipate R&D Spending Patterns:
 ![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/World.png)
 
-The goal of these scripts is to answer the following question: where is the Department of Defense (DoD) spending 
-its Research & Development (R&D) dollars? 
+The goal of these scripts is to answer the following question: where is the Department of Defense (DoD) likely to spend 
+its Fiscal Year 2021 Research & Development (R&D) dollars? 
 
 DoD R&D Projects are sorted into 8 Budget Activities:
 ##### 01 – Basic Research
