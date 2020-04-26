@@ -96,6 +96,8 @@ trimmed = trimmed.drop(index=[60,61,62,63,64])
 
 # print result to make sure there are no nulls and no regions
 
+print(trimmed)
+
 # Return the index to 'Country'
 
 trimmed.set_index('Country',inplace=True)
@@ -119,7 +121,7 @@ print("\n\n",trimmed.sum())
 
 # Note also: this sum does not include any "Undistributed" amounts that may or
 # may not have been spent overseas on R&D for which Vendor Information is
-# undisclosed. There was over $1.6 Billion in "Undistributed" DoD R&D spending
+# undisclosed. There was over $16 Billion in "Undistributed" DoD R&D spending
 # in FY18. This money was spent *somewhere*, we just cannot say where.
 
 # Finally export to .csv which is the variable 'outname'
