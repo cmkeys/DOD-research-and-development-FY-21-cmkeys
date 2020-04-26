@@ -12,4 +12,4 @@ Next, we attach Geo-locator data (latitude and longitude) to the State and Count
 from the web for the States and Countries. We then project a rough estimate of the geographic distribution 
 for Fiscal Year 2021 DoD R&D dollars.
 
-![]/(DOD-research-and-development-FY-21-cmkeys/World.png)
+![]/(https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/World.png)
