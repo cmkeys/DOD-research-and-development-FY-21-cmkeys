@@ -1,7 +1,7 @@
-# DOD-research-and-development-FY-21-cmkeys
+# Department of Defense R&D Funding: FY21 Geographic Distribution Estimates
 
 The goal of these scripts is to answer the following question: where is the Department of Defense (DoD) spending 
-its Research & Development dollars? 
+its Research & Development (R&D) dollars? 
 
 DoD R&D Projects are sorted into 8 Budget Activities:
 01 – Basic Research
