@@ -1,5 +1,4 @@
 # DOD-research-and-development-FY-21-cmkeys
- DoD R&D FY21 spending geographic distribution projection
 
 The goal of these scripts is to answer the following question: where is the Department of Defense (DoD) spending 
 its Research & Development dollars? 
