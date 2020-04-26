@@ -5,23 +5,14 @@ Created on Tue Apr 21 05:34:15 2020
 
 The goal in this script is to combine the NSF Federal Funds for R&D Survey data
 with the FY21 DoD Budget Request Data from the .csv files obtained in previous scripts.
-We want a ratio for each Budget Activity that tells us the growth from FY19 to FY21.
+We want a ratio that tells us the growth from FY18 to FY21.
 
 The NSF data is coded as: "Total Research" -- corresponding to Budget Activity 1+2;
 "Total experimental developmentb"-- corresponding to Budget Activities 3-6;
 and "Total operational systems developmentc"-- corresponding to Budget Activity 7.
 
-We will drop the Operational Systems / BA7 data because, upon closer examination,
-NSF ceased to include this data in official geographical R&D reporting as of FY16, despite
-still collecting this data from DoD through FY19 (which is a real puzzle).
-
-We must also take into account the fact that NSF geographical reports combine data
-from 11 federal agencies: DoD, DoE, NASA, DoC, DoI, DoT, DHHS, DHS, USDA, NSF, and DoD. 
-DoD FY18 BA1-6 R&D spending corresponds to 42.0677% of the FY18 R&D spending
-of these 11 agencies.
-
-This script integrates these insights to identify a ratio we can apply as
-an index to each term of the 50-state NSF geographical spending table.
+We can then apply the ratio to each term of the 50-state NSF geographical spending table,
+and to the international data will will obtain later.
 """
 
 # import pandas as pd
