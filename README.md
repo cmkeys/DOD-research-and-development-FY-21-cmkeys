@@ -1,18 +1,18 @@
-# Using Python and QGIS to Anticipate Federal R&D Spending:
+# Using Python and QGIS to Anticipate R&D Spending Patterns:
 ![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/World.png)
 
 The goal of these scripts is to answer the following question: where is the Department of Defense (DoD) spending 
 its Research & Development (R&D) dollars? 
 
 DoD R&D Projects are sorted into 8 Budget Activities:
-01 – Basic Research
-02 – Applied Research
-03 – Advanced Technology Development
-04 – Advanced Component Development and Prototypes
-05 – System Development and Demonstration
-06 – RDT&E Management Support
-07 – Operational System Development
-08 – Software and Digital Technology Pilot Programs
+#### 01 – Basic Research
+#### 02 – Applied Research
+#### 03 – Advanced Technology Development
+#### 04 – Advanced Component Development and Prototypes
+#### 05 – System Development and Demonstration
+#### 06 – RDT&E Management Support
+#### 07 – Operational System Development
+#### 08 – Software and Digital Technology Pilot Programs
 
 We write scripts to fetch the Fiscal Year 2021 President's Budget request from the DoD Comptroller's website, 
 and we fetch historical data from the National Science Foundation's Survey of Federal Funds for R&D. We then
@@ -61,3 +61,5 @@ There are several limitations inherent in the analysis:
 4) Funding for the Marshall Islands is underreported in the NSF FY18 dataset. US Army R&D funds for Kwajalein Atoll would add ~$400 million to the Marshall Islands total, not depicted in the QGIS projections.
 
 Despite these limitations, the data provide a useful overview of R&D spending patterns for the U.S. Department of Defense. This global research enterprise spans over 60 countries.
+
+#### For more information on method, see notes in the repository .py scripts. 
