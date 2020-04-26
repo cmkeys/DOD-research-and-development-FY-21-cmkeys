@@ -51,7 +51,7 @@ We can zoom into particular regions to get a better view:
 
 ##### There are several limitations inherent in the analysis:
 
-1) The best available National Science Foundation spending is from FY18. We are making a projection to FY21. Major adjustments in geographic distribution in FY19 and FY20 will not show up, to say nothing of changes that will occur in FY21.
+1) The best available data is from FY18. We are making a projection to FY21. Major adjustments in geographic distribution in FY19 and FY20 will not show up, to say nothing of changes that will occur in FY21. Furthermore, the data covers "obligations," i.e. initial contract awards. The data does not account for the allocation of sub-contracting dollars. There is extensive sub-contracting in the DoD R&D ecosystem. NSF Survey data cannot capture the geographic distribution of sub-contracting. 
 
 2) After gathering all available State and Country data, we can only map $77,827,361,780 out of the total FY21 request of $107,901,057,000. The discrepancy of $30.07 Billion is a result of **two un-mappable pieces of NSF data**: "Undistributed" amounts totalling $24.1 Billion in FY21; and spending labeled "Other Areas" without country designation totalling $5.9 Billion in FY21. "Undistributed" amounts are a result of DoD using "legacy systems" for a significant portion of its R&D accounting. These legacy systems do not deliver reports by geographic distribution. Therefore, DoD reports these amounts in a separate category: "Undistributed". A separate portion of classified research is also reported as "Undistributed." These data are all absent from the QGIS projections.
 
