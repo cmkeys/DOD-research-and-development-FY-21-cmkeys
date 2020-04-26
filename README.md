@@ -1,5 +1,5 @@
-# Department of Defense R&D Funding: 
-## FY21 Geographic Distribution Estimates
+# DoD R&D Funding: FY21 Geographic Distribution Estimates
+![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/World.png)
 
 The goal of these scripts is to answer the following question: where is the Department of Defense (DoD) spending 
 its Research & Development (R&D) dollars? 
@@ -20,11 +20,9 @@ clean and analyse the datasets, isolating DoD spending for all 50 United States 
 
 Next, we attach Geo-locator data (latitude and longitude) to the State and Country data, and fetch Shape Files 
 from the web for the States and Countries. We then project a rough estimate of the geographic distribution 
-for Fiscal Year 2021 DoD R&D dollars using QGIS. The results look like this:
+for Fiscal Year 2021 DoD R&D dollars using QGIS. The results look like the graph above:
 
-![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/World.png)
-
-We can zoom in particular regions to get a better view:
+We can zoom into particular regions to get a better view:
 
 Middle East:
 ![](https://github.com/cmkeys/DOD-research-and-development-FY-21-cmkeys/blob/master/Middle%20East%20Estimate_DoD%20FY21%20R%26D%20Spending.png)
