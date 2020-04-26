@@ -20,7 +20,7 @@ geographical distributions of FY21 funds.
 DoD R&D budget requests are stored in Excel files.
 Pandas can read Excel files.
 If we need to write to Excel files, we'll need a third party module later, but
-not yet.
+this will not be necessary for our purposes.
 """
 
 #Step 1: import pandas as pd
