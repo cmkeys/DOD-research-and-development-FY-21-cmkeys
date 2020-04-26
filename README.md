@@ -11,3 +11,5 @@ clean and analyse the datasets, isolating DoD spending for all 50 United States 
 Next, we attach Geo-locator data (latitude and longitude) to the State and Country data, and fetch Shape Files 
 from the web for the States and Countries. We then project a rough estimate of the geographic distribution 
 for Fiscal Year 2021 DoD R&D dollars.
+
+![]/(DOD-research-and-development-FY-21-cmkeys/World.png)
