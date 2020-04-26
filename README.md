@@ -1,5 +1,5 @@
 # Department of Defense R&D Funding: 
-# FY21 Geographic Distribution Estimates
+## FY21 Geographic Distribution Estimates
 
 The goal of these scripts is to answer the following question: where is the Department of Defense (DoD) spending 
 its Research & Development (R&D) dollars? 
