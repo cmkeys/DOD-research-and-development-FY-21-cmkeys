@@ -65,6 +65,14 @@ dodlat.set_index('State',inplace=True)
 
 print(dodlat)
 
+# Now print the grand total we've obtained
+
+print(dodlat.Total.sum())
+
+# Notice that the total is only $77,827,361,780 out of the total FY21 request of $107,901,057,000
+# Why the discrepancy of $30.07 Billion? Well, we cannot use: "Undistributed" amounts totalling $24.1 Billion; 
+# "Other Areas" without country designation totalling $5.9 Billion. 
+
 # Finally, export the result to a .csv file that can be used in QGIS.
 
 dodlat.to_csv(outname)
