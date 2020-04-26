@@ -54,11 +54,9 @@ There are several limitations inherent in the analysis:
 
 1) The best available National Science Foundation spending is from FY18. We are making a projection to FY21. Major adjustments in geographic distribution in FY19 and FY20 will not show up, to say nothing of changes that will occur in FY21.
 
-2) NSF data lists a significant portion of DoD spending as "Undistributed," roughly $17 Billion. This is a result of DoD using "legacy systems" for a significant portion of its R&D accounting. These legacy systems do not deliver reports by geographic distribution. Therefore, DoD reports these amounts in a separate category: "Undistributed". A separate portion of classified research is also reported as "Undistributed." These data are all absent from the QGIS projections.
+2) After gathering all available State and Country data, we can only map $77,827,361,780 out of the total FY21 request of $107,901,057,000. The discrepancy of $30.07 Billion is a result of **two un-mappable pieces of NSF data**: "Undistributed" amounts totalling $24.1 Billion in FY21; and spending labeled "Other Areas" without country designation totalling $5.9 Billion in FY21. "Undistributed" amounts are a result of DoD using "legacy systems" for a significant portion of its R&D accounting. These legacy systems do not deliver reports by geographic distribution. Therefore, DoD reports these amounts in a separate category: "Undistributed". A separate portion of classified research is also reported as "Undistributed." These data are all absent from the QGIS projections.
 
-3) NSF data lumps some spending into regional clusters, e.g. Minor Outlying Islands, without clarifying country-by-country spending. Because individual countries are not specified, this data cannot be utliized.
-
-4) Funding for the Marshall Islands is underreported in the NSF FY18 dataset. US Army R&D funds for Kwajalein Atoll would add ~$400 million to the Marshall Islands total, not depicted in the QGIS projections.
+5) Funding for the Marshall Islands is underreported in the NSF FY18 dataset. US Army R&D funds for Kwajalein Atoll would add ~$400 million to the Marshall Islands total, not depicted in QGIS projections.
 
 Despite these limitations, the data provide a useful overview of R&D spending patterns for the U.S. Department of Defense. This global research enterprise spans over 60 countries.
 
