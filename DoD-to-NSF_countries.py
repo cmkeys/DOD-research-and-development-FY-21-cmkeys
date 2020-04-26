@@ -41,23 +41,23 @@ xl = pd.ExcelFile(inp_byte)
 xlf = pd.read_excel(xl,'Table 86', header=3)
 
 # First, the columns of the file are not helpful. Rather than "Region, country, or economy"
-# and "DOD", we prefer "Country" and "Total" to be consistent with 
+# and "DOD", we prefer "Country" and "Total" to be consistent with
 # other scripts. Use the .rename() command, changing columns using Dict {} symbols.
 
 xlf = xlf.rename(columns={"Region, country, or economy": "Country", "DOD": "Total"})
 
-# We only want two columns of data: "Region, country, or economy" and "DOD".
+# We only want two columns of data: "Country" and "Total".
 # Trim the data to those columns using .iloc[]. They are columns [0,3]
 
 trimmed = xlf.iloc[:,[0,3]]
 
-# Set index as "Region, country, or economy"
+# Set index as "Country"
 
 trimmed.set_index('Country',inplace=True)
 
 # We need to rename a handful of indexes to align Country names in NSF's database
-# with international names in latitude/longitude databases. 
-# We need to replace country names with: "South Korea", "The Bahamas", 
+# with international names in latitude/longitude databases.
+# We need to replace country names with: "South Korea", "The Bahamas",
 # "Hong Kong S.A.R." , "Czech Republic", and "British Virgin Islands".
 # Use the .rename() command with arguments 'index= {}, inplace=True'
 
@@ -76,10 +76,10 @@ droplist = ['All areas and organizations','Africa','Asia','Asian countries, othe
 
 trimmed = trimmed.drop(droplist)
 
-# We now want to drop all values with zeros. To do this, set the index to 'DOD'
+# We now want to drop all values with zeros. To do this, set the index to 'Total'
 # and create a for loop that runs over 'index,row' and uses the .iterrows() command.
-# If the row in 'DOD' equals zero, drop the row.
- 
+# If the row in 'Total' equals zero, drop the row.
+
 trimmed.set_index('Total')
 
 for index, row in trimmed.iterrows():
@@ -96,17 +96,17 @@ trimmed = trimmed.drop(index=[60,61,62,63,64])
 
 # print result to make sure there are no nulls and no regions
 
-# Return the index to 'Region, country, or economy'
+# Return the index to 'Country'
 
 trimmed.set_index('Country',inplace=True)
 
-# The dollars are in thousands in this Table, therefore multiply all values 
+# The dollars are in thousands in this Table, therefore multiply all values
 # by 1000.
 
 trimmed = trimmed*1000
 
 # Finally, multiply the Totals by the DoD FY21 Multiplier, which is
-# '1.2887570722688233' -- use .astype(np.int64) to set the result to integer datatype. 
+# '1.2887570722688233' -- use .astype(np.int64) to set the result to integer datatype.
 # Print the result.
 
 trimmed['Total'] = trimmed['Total'].apply(lambda x: x*1.2887570722688233)
@@ -118,7 +118,7 @@ print(trimmed)
 print("\n\n",trimmed.sum())
 
 # Note also: this sum does not include any "Undistributed" amounts that may or
-# may not have been spent overseas on R&D for which Vendor Information is 
+# may not have been spent overseas on R&D for which Vendor Information is
 # undisclosed. There was over $1.6 Billion in "Undistributed" DoD R&D spending
 # in FY18. This money was spent *somewhere*, we just cannot say where.
 
