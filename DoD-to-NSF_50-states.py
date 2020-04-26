@@ -19,9 +19,10 @@ be available until NSF publishes the next volume of its R&D Funds Survey.
 We will eventually combine this data with GIS shapefiles to build a map of projected 
 DoD FY21 R&D spending (after applying a DoD multiplier). 
 """
-# import pandas
+# import pandas as pd and numpy as np
 
 import pandas as pd
+import numpy as np
 
 # Display Max Rows so you can see what you're getting as you go
 
@@ -34,6 +35,11 @@ pd.set_option('display.max_rows',None)
 
 excelname = 'https://ncsesdata.nsf.gov/fedfunds/2018/excel/ffs18-dt-tab094.xlsx'
 outname = 'DoD_FY18__RD_50_state.csv'
+
+# Also import 'DoD_FY21_Multiplier.csv' and read with pd.read_csv()
+
+dodmulti = 'DoD_FY21_Multiplier.csv'
+dodmulti = pd.read_csv(dodmulti)
 
 # Open the desired Excel file from the URL, which is Table 94. 
 # Read the Excel file using pd.read_excel() with arguments (xl,'Table 94',header=3)
@@ -105,19 +111,27 @@ trimmed['State'] = statenames
 trimmed = trimmed[['State','Total']]
 trimmed.head()
 
+
 # The values in the NSF dataset are in $K, so multiply the Totals by 1000
 # using .apply(lambda x: x*1000)
 
 trimmed['Total'] = trimmed['Total'].apply(lambda x: x*1000)
 
-# print the result. Check that the values are correct by using the Variable explorer
-# and viewing the xlf DataFrame in comparison with the trimmed DataFrame.
 
+# Finally, use the same .apply() command to multiply the Totals by the 
+# DoD FY21 Multiplier, which is '1.2887570722688233'.
+# Use .astype(np.int64) to set the result to integer datatype. 
+# Print the result.
+
+trimmed['Total'] = trimmed['Total'].apply(lambda x: x*1.2887570722688233)
+
+trimmed['Total'] = trimmed['Total'].astype(np.int64)
 print(trimmed)
 
 # Set the index to 'State' for ease of use later.
 
 trimmed.set_index('State',inplace=True)
+
 
 # Finally, send to the output file
 

@@ -43,7 +43,6 @@ outname = 'DoD_FY21_Multiplier.csv'
 
 out_handle = open(outname,'w',newline='')
 out_writer = csv.writer(out_handle)
-out_writer.writerow(['DoD FY21 R&D Multiplier'])
 
 # set variables to read input files with pd.read_csv() command
 
@@ -58,21 +57,21 @@ print(dodreader)
 print(nsfreader)
 
 # Use .iloc[] command with arguments [[rows],column] to select 
-# Budget Activities 1-6 and 8 from Dod data.
+# Budget Activities from Dod data.
 
-dodBA = dodreader.iloc[[0,1,2,3,4,5,7],1]
+dodBA = dodreader.iloc[[0,1,2,3,4,5,6,7],1]
 
 # print result to verify a column of BA totals for DoD FY21 R&D budget request.
 # Print the sum
 
 print('\n', dodBA)
-print('\nSum of FY21 DoD Request BA1-6+8:',dodBA.sum())
+print('\nSum of FY21 DoD Request:',dodBA.sum())
 
 # Use .iloc[] to select the totals from nsfreader. We need to exclude
 # 'Total operational systems developmentc' because NSF does not use this data
 # for its geographical R&D distributions.
 
-nsfBA = nsfreader.iloc[[0,1],1]
+nsfBA = nsfreader.iloc[[0,1,2],1]
 
 # Note: the NSF data is currently in $Millions while DoD data is in $.
 # Multiple NSF data by 1,000,000 to get actuals
@@ -85,7 +84,7 @@ nsfactuals = nsfBA*1000000
 nsfactuals = nsfactuals.astype(np.int64)
 
 print('\n',nsfactuals)
-print('\nSum of NSF DoD FY19:',nsfactuals.sum())
+print('\nSum of NSF DoD FY18:',nsfactuals.sum())
 
 # The DoD FY21 R&D Budget Request total is $68.084022 Billion.
 # The NSF FY19 R&D Budget spending total is $56.0494 Billion
@@ -101,6 +100,6 @@ print("\n\nMultiplier is:",multiplier)
 # Finally, write the multiplier into the .csv output file.
 # Close the file.
 
-out_writer.writerow(['1.214892969416265'])
+out_writer.writerow(['1.2887570722688233'])
 out_handle.close()
 

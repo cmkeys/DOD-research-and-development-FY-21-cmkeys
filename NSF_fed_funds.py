@@ -26,17 +26,17 @@ pd.set_option('display.max_rows',None)
 
 # Set up file names: the NSF URL with the .zip file; the .xlsx file within the .zip
 # folder; and the output file we will write the results into. 
-# The Excel file contains FY19 DoD R&D spending data.
+# The Excel file contains FY18 DoD R&D obligations (i.e. contract award) data.
 
 zipname = 'https://ncsesdata.nsf.gov/fedfunds/2018/ffs18-dt-tables.zip'
-excelname = 'ffs18-dt-tab010.xlsx'
+excelname = 'ffs18-dt-tab009.xlsx'
 outname = 'NSFtotals.csv'
 
 
 # It is best to use the requests.get() command to extract the .zip from the URL,
 # then to use BytesIO translate the contents.
 # Open the .xlsx file once the .zip is obtained. Make an Excel reader for the file. 
-# If you open the Excel file, there is one worksheet 'Table 10' with messy headers.
+# If you open the Excel file, there is one worksheet 'Table 9' with messy headers.
 # We are seeking data from the 'Total' column, where the header is in row 3.
 # As a result we need to use 'header=3'.
 
@@ -44,7 +44,7 @@ r = requests.get(zipname)
 z = zipfile.ZipFile(io.BytesIO(r.content))
 inp_byte = z.open(excelname)
 xl = pd.ExcelFile(inp_byte)
-xlf = pd.read_excel(xl,'Table 10',header=3)
+xlf = pd.read_excel(xl,'Table 9',header=3)
 
 # Filter for the 'Agency' and 'Total' columns
 
@@ -70,7 +70,7 @@ trimtot = tot.iloc[[4,7,10],:]
 print("\n\n",trimtot)
 
 # Take the sum. The numbers are in $ Millions.
-# As you can see, the Department of Defense spent $90.3271 Billion on R&D in 2019.
+# As you can see, the Department of Defense spent $83.7249 Billion on R&D in 2018.
 # We can now set about mapping the NSF spending data onto the DoD FY21 Budget Request
 
 print("\n\n",trimtot.sum())

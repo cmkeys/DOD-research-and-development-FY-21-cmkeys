@@ -40,6 +40,12 @@ inp_byte = z.open(excelname)
 xl = pd.ExcelFile(inp_byte)
 xlf = pd.read_excel(xl,'Table 86', header=3)
 
+# First, the columns of the file are not helpful. Rather than "Region, country, or economy"
+# and "DOD", we prefer "Country" and "Total" to be consistent with 
+# other scripts. Use the .rename() command, changing columns using Dict {} symbols.
+
+xlf = xlf.rename(columns={"Region, country, or economy": "Country", "DOD": "Total"})
+
 # We only want two columns of data: "Region, country, or economy" and "DOD".
 # Trim the data to those columns using .iloc[]. They are columns [0,3]
 
@@ -47,7 +53,17 @@ trimmed = xlf.iloc[:,[0,3]]
 
 # Set index as "Region, country, or economy"
 
-trimmed.set_index('Region, country, or economy',inplace=True)
+trimmed.set_index('Country',inplace=True)
+
+# We need to rename a handful of indexes to align Country names in NSF's database
+# with international names in latitude/longitude databases. 
+# We need to replace country names with: "South Korea", "The Bahamas", 
+# "Hong Kong S.A.R." , "Czech Republic", and "British Virgin Islands".
+# Use the .rename() command with arguments 'index= {}, inplace=True'
+
+trimmed.rename(index={'Korea, South':'South Korea','Bahamas, The':'The Bahamas',
+                      'Czechia':'Czech Republic','Hong Kong':'Hong Kong S.A.R.',
+                      'Virgin Islands, British':'British Virgin Islands'},inplace=True)
 
 print(trimmed)
 
@@ -56,7 +72,7 @@ print(trimmed)
 # and applying the .drop() command on the list.
 
 droplist = ['All areas and organizations','Africa','Asia','Asian countries, other',
-            'Europe','North America','Oceania','International organizations']
+            'Europe','North America','South America','Oceania','International organizations']
 
 trimmed = trimmed.drop(droplist)
 
@@ -64,10 +80,10 @@ trimmed = trimmed.drop(droplist)
 # and create a for loop that runs over 'index,row' and uses the .iterrows() command.
 # If the row in 'DOD' equals zero, drop the row.
  
-trimmed.set_index('DOD')
+trimmed.set_index('Total')
 
 for index, row in trimmed.iterrows():
-    if row['DOD'] == 0:
+    if row['Total'] == 0:
         trimmed.drop(index, inplace=True)
 
 # Now drop any rows with null values using the .drop() command. Here we
@@ -76,34 +92,35 @@ for index, row in trimmed.iterrows():
 
 trimmed = trimmed.reset_index()
 
-trimmed = trimmed.drop(index=[61,62,63,64,65])
+trimmed = trimmed.drop(index=[60,61,62,63,64])
 
 # print result to make sure there are no nulls and no regions
 
 # Return the index to 'Region, country, or economy'
 
-trimmed.set_index('Region, country, or economy',inplace=True)
+trimmed.set_index('Country',inplace=True)
 
 # The dollars are in thousands in this Table, therefore multiply all values 
 # by 1000.
 
 trimmed = trimmed*1000
 
-# Set to data type 'int64' to match the data from other scripts.
-# Print the result, and also print the sum using the .sum() command
+# Finally, multiply the Totals by the DoD FY21 Multiplier, which is
+# '1.2887570722688233' -- use .astype(np.int64) to set the result to integer datatype. 
+# Print the result.
 
-trimmed = trimmed.astype(np.int64)
+trimmed['Total'] = trimmed['Total'].apply(lambda x: x*1.2887570722688233)
+
+trimmed['Total'] = trimmed['Total'].astype(np.int64)
 
 print(trimmed)
 
 print("\n\n",trimmed.sum())
 
-# Note that the data tells us DoD spent $380,739,000 overseas on R&D (not counting
-# Operational Systems Development) in FY18. 
 # Note also: this sum does not include any "Undistributed" amounts that may or
 # may not have been spent overseas on R&D for which Vendor Information is 
 # undisclosed. There was over $1.6 Billion in "Undistributed" DoD R&D spending
-# in FY18, the vast majority of which was likely spent in the 50 United States.
+# in FY18. This money was spent *somewhere*, we just cannot say where.
 
 # Finally export to .csv which is the variable 'outname'
 

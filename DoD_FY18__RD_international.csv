@@ -1,62 +1,61 @@
-"Region, country, or economy",DOD
-Kenya,470900
-South Africa,139600
-Cambodia,17000
-Hong Kong,75100
-India,808100
-Israel,223344100
-Japan,4034300
-Jordan,20000
-"Korea, South",3450500
-Malaysia,238200
-Philippines,813100
-Singapore,1945600
-Taiwan,549200
-Thailand,1709600
-Turkey,367600
-United Arab Emirates,306600
-Vietnam,884900
-Austria,497500
-Belgium,2518200
-Bulgaria,21300
-Croatia,489400
-Czechia,250200
-Denmark,866300
-Estonia,347900
-Finland,88400
-France,7429400
-Germany,3787300
-Greece,277600
-Italy,1989200
-Latvia,9000
-Lithuania,25000
-Luxembourg,883200
-Macedonia,72000
-Netherlands,2654900
-Norway,522400
-Poland,992500
-Portugal,313500
-Romania,60000
-Slovakia,40300
-Slovenia,224000
-Spain,1447800
-Sweden,2466200
-Switzerland,3589000
-Ukraine,162900
-United Kingdom,43731400
-"Bahamas, The",11800100
-Canada,28020700
-Mexico,1849200
-"Virgin Islands, British",15400
-Australia,14020800
-Fiji,199600
-Marshall Islands,286500
-New Zealand,2133700
-South America,3740900
-Argentina,358200
-Bolivia,95700
-Brazil,1131400
-Chile,2117300
-Colombia,12600
-Peru,10700
-Suriname,15000
+Country,Total
+Kenya,606875
+South Africa,179910
+Cambodia,21908
+Hong Kong S.A.R.,96785
+India,1041444
+Israel,287836288
+Japan,5199232
+Jordan,25775
+South Korea,4446856
+Malaysia,306981
+Philippines,1047888
+Singapore,2507405
+Taiwan,707785
+Thailand,2203259
+Turkey,473747
+United Arab Emirates,395132
+Vietnam,1140421
+Austria,641156
+Belgium,3245348
+Bulgaria,27450
+Croatia,630717
+Czech Republic,322447
+Denmark,1116450
+Estonia,448358
+Finland,113926
+France,9574691
+Germany,4880909
+Greece,357758
+Italy,2563595
+Latvia,11598
+Lithuania,32218
+Luxembourg,1138230
+Macedonia,92790
+Netherlands,3421521
+Norway,673246
+Poland,1279091
+Portugal,404025
+Romania,77325
+Slovakia,51936
+Slovenia,288681
+Spain,1865862
+Sweden,3178332
+Switzerland,4625349
+Ukraine,209938
+United Kingdom,56359151
+The Bahamas,15207462
+Canada,36111875
+Mexico,2383169
+British Virgin Islands,19846
+Australia,18069405
+Fiji,257235
+Marshall Islands,369228
+New Zealand,2749820
+Argentina,461632
+Bolivia,123334
+Brazil,1458099
+Chile,2728685
+Colombia,16238
+Peru,13789
+Suriname,19331
