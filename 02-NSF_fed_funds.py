@@ -31,7 +31,7 @@ excelname = 'ffs18-dt-tab009.xlsx'
 outname = 'NSFtotals.csv'
 
 # It is best to use the requests.get() command to extract the .zip from the URL,
-# then to use BytesIO translate the contents.
+# then to use BytesIO to translate the contents.
 # Open the .xlsx file once the .zip is obtained. Make an Excel reader for the file. 
 # If you open the Excel file, there is one worksheet 'Table 9' with messy headers.
 # We are seeking data from the 'Total' column, where the header is in row 3.
