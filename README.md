@@ -5,14 +5,14 @@ The goal of these scripts is to answer the following question: where is the Depa
 its Research & Development (R&D) dollars? 
 
 DoD R&D Projects are sorted into 8 Budget Activities:
-#### 01 – Basic Research
-#### 02 – Applied Research
-#### 03 – Advanced Technology Development
-#### 04 – Advanced Component Development and Prototypes
-#### 05 – System Development and Demonstration
-#### 06 – RDT&E Management Support
-#### 07 – Operational System Development
-#### 08 – Software and Digital Technology Pilot Programs
+##### 01 – Basic Research
+##### 02 – Applied Research
+##### 03 – Advanced Technology Development
+##### 04 – Advanced Component Development and Prototypes
+##### 05 – System Development and Demonstration
+##### 06 – RDT&E Management Support
+##### 07 – Operational System Development
+##### 08 – Software and Digital Technology Pilot Programs
 
 We write scripts to fetch the Fiscal Year 2021 President's Budget request from the DoD Comptroller's website, 
 and we fetch historical data from the National Science Foundation's Survey of Federal Funds for R&D. We then
