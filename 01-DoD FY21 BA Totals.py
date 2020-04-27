@@ -100,7 +100,7 @@ print(totals)
 
 # Write the results to a .csv file named 'DoD FY21 BA Totals.csv'
 
-totals.to_csv('g01-DoD-FY21-BA-Totals.csv')
+totals.to_csv('DoD-FY21-BA-Totals.csv')
 
 # For orientation, take a sum of 'sumBA'. Result: DoD is requesting ~$108 Billion
 # of Research & Development funding for Fiscal Year 2021. This money will be spent
